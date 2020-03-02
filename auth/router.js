@@ -30,7 +30,9 @@ router.post("/register", (req, res) => {
 
 // login endpoint
 router.post("/login", (req, res) => {
-  let { username, password } = req.body;
+  let { id, username, password } = req.body;
+
+  console.log("This is req.body: ", req.body)
 
   Users.findBy({ username })
     .first()
@@ -39,8 +41,8 @@ router.post("/login", (req, res) => {
         const token = generateToken(user);
 
         res.status(200).json({
-          message: `Welcome ${user.username}!`,
-          token
+          token,
+          userID: user.id
         });
       } else {
         res.status(401).json({ error: "Invalid credentials" });
