@@ -20,14 +20,14 @@ exports.seed = function(knex) {
           medicinalUse: false,
           tolerance: 4,
           medicalConditions: "Yo dawg I can't feel my legs!",
-          desiredEffect: null
+          desiredEffect: "Stand up"
         },
         {
           username: "Seed Malone",
           password: "pass",
           email: "stardom@acorn.com",
           medicinalUse: false,
-          tolerance: null,
+          tolerance: 4,
           medicalConditions: null,
           desiredEffect: "I want to be a real boy!"
         }
