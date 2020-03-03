@@ -1,13 +1,38 @@
-
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
+  return knex("users")
+    .truncate()
+    .then(function() {
+      const users = [
+        {
+          username: "Seed Smith",
+          password: "pass",
+          email: "seed@tree.com",
+          medicinalUse: true,
+          tolerance: 2,
+          medicalConditions: "Terrible back pain and existential dread",
+          desiredEffect: "I want to enjoy life again"
+        },
+        {
+          username: "Seed Jones",
+          password: "pass",
+          email: "JseedYO@tree.com",
+          medicinalUse: false,
+          tolerance: 4,
+          medicalConditions: "Yo dawg I can't feel my legs!",
+          desiredEffect: null
+        },
+        {
+          username: "Seed Malone",
+          password: "pass",
+          email: "stardom@acorn.com",
+          medicinalUse: false,
+          tolerance: null,
+          medicalConditions: null,
+          desiredEffect: "I want to be a real boy!"
+        }
+      ]
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
+      return knex("users").insert(users);
     });
 };
