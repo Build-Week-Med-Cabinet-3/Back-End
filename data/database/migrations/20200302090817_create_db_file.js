@@ -11,6 +11,8 @@ exports.up = function(knex) {
 
       users.string("password", 128).notNullable();
 
+      users.string("email", 128).index().unique();
+
       users.boolean("medicinalUse").index();
 
       users.integer("tolerance").index();
