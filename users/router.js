@@ -86,4 +86,38 @@ router.get("/:id/recs", (req, res) => {
     });
 });
 
+// this endpoint is for saving a recommendation as a favorite
+router.post("/:id/favs", (req, res) => {
+  const { id } = req.params;
+  req.body.userId = id;
+  const favorite = req.body;
+
+  console.log("This is req.body in POST new favorite: ", req.body);
+
+  Users.addFav(favorite)
+    .then(newFav => {
+      console.log("This is res in POST new favorite: ", newFav);
+      res.status(200).json(newFav);
+    })
+    .catch(error => {
+      console.log("This is error in POST new favorite: ", error);
+      res.status(500).json({ error: "Error adding favorite" });
+    });
+});
+
+// this endpoint is for retrieving a user's favorites
+router.get("/:id/favs", (req, res) => {
+  const { id } = req.params;
+
+  Users.findFavsByUserId(id)
+    .then(foundFavs => {
+      console.log("This is foundFavs: ", foundFavs);
+      res.status(200).json(foundFavs);
+    })
+    .catch(error => {
+      console.log("This is error in find favs by user ID: ", error);
+      res.status(500).json({ error: "Error retrieving favorites" });
+    });
+});
+
 module.exports = router;

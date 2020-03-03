@@ -2,10 +2,14 @@ const db = require("../data/connection.js");
 
 module.exports = {
   add,
+  addFav,
+  delFav,
   find,
   findBy,
   findById,
   findRecs,
+  findFavById,
+  findFavsByUserId,
   update,
   remove
 };
@@ -17,6 +21,21 @@ function add(user) {
       const [id] = ids;
       return findById(id);
     });
+}
+
+function addFav(rec) {
+  return db("favorites")
+    .insert(rec, "id")
+    .then(ids => {
+      const [id] = ids;
+      return findFavById(id);
+    });
+}
+
+function delFav(id) {
+  return db("favorites")
+    .where("id", id)
+    .del();
 }
 
 function find() {
@@ -77,6 +96,19 @@ function findRecs(id) {
     )
     .where("recommendations.userId", id)
     .orderBy("recommendations.id");
+}
+
+function findFavById(id) {
+  return db("favorites")
+    .select("id", "strain", "type", "flavor", "description", "userId")
+    .where({ id })
+    .first();
+}
+
+function findFavsByUserId(id) {
+  return db("favorites")
+    .select("id", "strain", "type", "flavor", "description", "userId")
+    .where({ userId: id });
 }
 
 function update(id, changes) {
