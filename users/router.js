@@ -71,4 +71,19 @@ router.delete("/:id", (req, res) => {
     });
 });
 
+// this endpoint is for retrieving all recommendations for a user
+router.get("/:id/recs", (req, res) => {
+  const { id } = req.params;
+
+  Users.findRecs(id)
+    .then(recs => {
+      console.log("This is recs in GET all recs: ", recs);
+      res.status(200).json(recs);
+    })
+    .catch(error => {
+      console.log("This is error in GET all recs: ", error);
+      res.status(500).json({ error: "Error retrieving recs" });
+    });
+});
+
 module.exports = router;

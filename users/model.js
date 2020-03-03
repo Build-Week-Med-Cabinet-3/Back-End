@@ -5,6 +5,7 @@ module.exports = {
   find,
   findBy,
   findById,
+  findRecs,
   update,
   remove
 };
@@ -60,6 +61,22 @@ function findById(id) {
     )
     .where({ id })
     .first();
+}
+
+function findRecs(id) {
+  return db("recommendations")
+    .join("users", "users.id", "recommendations.userId")
+    .select(
+      "recommendations.id",
+      "strain",
+      "type",
+      "flavor",
+      "description",
+      "userId",
+      "users.username"
+    )
+    .where("recommendations.userId", id)
+    .orderBy("recommendations.id");
 }
 
 function update(id, changes) {

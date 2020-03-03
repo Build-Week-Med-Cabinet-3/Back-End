@@ -31,7 +31,7 @@ exports.seed = function(knex) {
           medicalConditions: null,
           desiredEffect: "I want to be a real boy!"
         }
-      ]
+      ];
       // Inserts seed entries
       return knex("users").insert(users);
     });
