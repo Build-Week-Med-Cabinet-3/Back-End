@@ -5,6 +5,7 @@ const authRouter = require("../auth/router.js");
 const usersRouter = require("../users/router.js");
 
 // import middleware
+const authenticate = require("../api/authenticate-middleware.js");
 
 // call routers and implement any applicable middleware
 router.use("/auth", authRouter);
