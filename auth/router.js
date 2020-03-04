@@ -11,7 +11,6 @@ const { jwtSecret } = require("../config/secrets.js");
 // registration endpoint
 router.post("/register", (req, res) => {
   let user = req.body;
-  console.log("This is req.body in register: ", req.body);
 
   const hash = bcrypt.hashSync(user.password, 8);
 
@@ -19,11 +18,9 @@ router.post("/register", (req, res) => {
 
   Users.add(user)
     .then(savedUser => {
-      console.log("This is savedUser in registration: ", savedUser);
       res.status(201).json(savedUser);
     })
     .catch(error => {
-      console.log("This is error in registration: ", error);
       res.status(500).json({ error: "Error registering user" });
     });
 });
@@ -47,7 +44,6 @@ router.post("/login", (req, res) => {
       }
     })
     .catch(error => {
-      console.log("This is error in login: ", error);
       res.status(500).json({ error: "Error loggin in" });
     });
 });

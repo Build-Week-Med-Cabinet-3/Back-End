@@ -3,7 +3,7 @@ const router = require("express").Router();
 // import recs model
 const Favs = require("./model.js");
 
-// set up basic GET end point to retrieve all recommendations
+// set up basic GET end point to retrieve all favorites
 router.get("/", (req, res) => {
   Favs.find()
     .then(foundFavs => {
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
     });
 });
 
-// this endpoint is for deleting a recommendation
+// this endpoint is for deleting a favorite
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
 
