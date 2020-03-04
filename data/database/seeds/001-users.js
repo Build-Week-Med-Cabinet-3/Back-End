@@ -5,8 +5,9 @@ exports.seed = function(knex) {
     .then(function() {
       const users = [
         {
-          username: "Seed Smith",
-          password: "pass",
+          username: "SeedSmith",
+          password:
+            "$2a$08$fB5pE5Iov0bMA8H7PhJZWe.HCO2IpN7isYLEowR8U.O5JdlySr9IS",
           email: "seed@tree.com",
           medicinalUse: true,
           tolerance: 2,
@@ -14,8 +15,9 @@ exports.seed = function(knex) {
           desiredEffect: "I want to enjoy life again"
         },
         {
-          username: "Seed Jones",
-          password: "pass",
+          username: "SeedJones",
+          password:
+            "$2a$08$tjaW0n3amCgwyKPkQmrtpeWeqH1140xV.UUC.a9YBcq9luU3OyUHO",
           email: "JseedYO@tree.com",
           medicinalUse: false,
           tolerance: 4,
@@ -23,8 +25,9 @@ exports.seed = function(knex) {
           desiredEffect: "Stand up"
         },
         {
-          username: "Seed Malone",
-          password: "pass",
+          username: "SeedMalone",
+          password:
+            "$2a$08$nwcHvy3/0/REvTqWPsH9P.ZSRrjrkXT5canEyDlzIKh8yFGB1R5y6",
           email: "stardom@acorn.com",
           medicinalUse: false,
           tolerance: 4,

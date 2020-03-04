@@ -45,3 +45,6 @@ describe("users router", function() {
     });
   });
 });
+
+
+// Add test for returning unauthorized error
