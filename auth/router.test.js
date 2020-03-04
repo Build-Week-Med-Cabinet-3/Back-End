@@ -23,7 +23,7 @@ describe("authentication router", function() {
           tolerance: 3,
           desiredEffect: "Fly"
         });
-        
+
       expect(newUser1.body.username).toBe("regtest");
 
       let removedUser = await request(server)
@@ -58,8 +58,11 @@ describe("authentication router", function() {
       return request(server)
         .post("/api/auth/login")
         .send({
-          username: "Seed Smith",
+          username: "SeedSmith",
           password: "pass"
+        })
+        .then(response => {
+          expect(response.body).toHaveProperty("token");
         });
     });
   });

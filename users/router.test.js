@@ -10,11 +10,25 @@ const testIndex = 0;
 // const authToken = process.env.TOKEN;
 
 const authToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTU4MzI3OTExNywiZXhwIjoxNTgzMzY1NTE3fQ.ziKRpdd-1mYTBa5aHIsXJBskBclQVMRhqOcB97GGegQ";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTU4MzM0MTYzMiwiZXhwIjoxNTgzNDI4MDMyfQ.3dKmZZBVh1Gp9tYbq7nOYxymrOuHW-ZlV-u6UV-l7cY";
 
 describe("users router", function() {
   it("should run the tests", function() {
     expect(true).toBe(true);
+  });
+
+  describe("GET /api/users/:id", function() {
+    it("should return user's information containing medicinalUse, tolerance, medicalConditions, and desiredEffect", function() {
+      return request(server)
+        .get(`/api/users/${testUserId}`)
+        .set("Authorization", authToken)
+        .then(response => {
+          expect(response.body).toHaveProperty("medicinalUse");
+          expect(response.body).toHaveProperty("tolerance");
+          expect(response.body).toHaveProperty("medicalConditions");
+          expect(response.body).toHaveProperty("desiredEffect");
+        });
+    });
   });
 
   describe("GET /api/users/:id/recs", function() {
@@ -45,6 +59,5 @@ describe("users router", function() {
     });
   });
 });
-
 
 // Add test for returning unauthorized error
