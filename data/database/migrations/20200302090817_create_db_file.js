@@ -34,24 +34,26 @@ exports.up = function(knex) {
       recs.increments(); // id column, integer, primary key, auto-increment
 
       recs
-        .string("strain", 128)
+        .string("Strain", 128)
         .index()
         .notNullable();
 
       recs
-        .string("type", 128)
+        .string("Type", 128)
         .index()
         .notNullable();
 
-      recs.string("flavor", 128).index();
+      recs.string("Flavor", 128).index();
+
+      recs.string("Effects", 128).index();
 
       recs
-        .string("description", 2048)
+        .string("Description", 2048)
         .index()
         .notNullable();
 
       recs
-        .integer("userId")
+        .integer("UserId")
         .unsigned()
         .notNullable()
         .references("id")
@@ -63,24 +65,26 @@ exports.up = function(knex) {
       favs.increments();
 
       favs
-        .string("strain", 128)
+        .string("Strain", 128)
         .index()
         .notNullable();
 
       favs
-        .string("type", 128)
+        .string("Type", 128)
         .index()
         .notNullable();
 
-      favs.string("flavor", 128).index();
+      favs.string("Flavor", 128).index();
+
+      favs.string("Effects", 128).index();
 
       favs
-        .string("description", 2048)
+        .string("Description", 2048)
         .index()
         .notNullable();
 
       favs
-        .integer("userId")
+        .integer("UserId")
         .unsigned()
         .notNullable()
         .references("id")

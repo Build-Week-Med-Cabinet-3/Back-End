@@ -6,7 +6,7 @@ const server = require("../api/server.js");
 // const authToken = process.env.TOKEN;
 
 const authToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImlhdCI6MTU4MzI3OTExNywiZXhwIjoxNTgzMzY1NTE3fQ.ziKRpdd-1mYTBa5aHIsXJBskBclQVMRhqOcB97GGegQ";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTZWVkSm9uZXMiLCJpYXQiOjE1ODM0MjYxODgsImV4cCI6MTU4MzU5ODk4OH0.HN3AUHs4DCGbji3XbwU5_WLdoFdmfL7O2-V4AJyVjwo";
 
 describe("recommendations router", function() {
   it("should run the tests", function() {

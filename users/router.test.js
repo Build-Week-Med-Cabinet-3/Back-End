@@ -10,7 +10,7 @@ const testIndex = 0;
 // const authToken = process.env.TOKEN;
 
 const authToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImlhdCI6MTU4MzM0MTYzMiwiZXhwIjoxNTgzNDI4MDMyfQ.3dKmZZBVh1Gp9tYbq7nOYxymrOuHW-ZlV-u6UV-l7cY";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTZWVkSm9uZXMiLCJpYXQiOjE1ODM0MjYxODgsImV4cCI6MTU4MzU5ODk4OH0.HN3AUHs4DCGbji3XbwU5_WLdoFdmfL7O2-V4AJyVjwo";
 
 describe("users router", function() {
   it("should run the tests", function() {
