@@ -7,7 +7,8 @@ exports.seed = function(knex) {
         {
           strain: "Blue Dream",
           type: "Hybrid",
-          flavor: "Happy, Relaxed, Uplifted, Euphoric, Creative",
+          flavor: "Lorem ipsum",
+          effects: "Happy, Relaxed, Uplifted, Euphoric, Creative",
           description:
             "Blue Dream, a sativa-dominant hybrid originating in California, has achieved legendary status among West Coast strains. Crossing Blueberry with Haze, Blue Dream balances full-body relaxation with gentle cerebral invigoration. Novice and veteran consumers alike enjoy the level effects of Blue Dream, which ease you gently into a calm euphoria. ",
           userId: 1

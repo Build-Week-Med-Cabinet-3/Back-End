@@ -89,6 +89,7 @@ function findRecs(id) {
       "recommendations.id",
       "strain",
       "type",
+      "effects",
       "flavor",
       "description",
       "userId",
@@ -100,14 +101,14 @@ function findRecs(id) {
 
 function findFavById(id) {
   return db("favorites")
-    .select("id", "strain", "type", "flavor", "description", "userId")
+    .select("id", "strain", "type", "effects", "flavor", "description", "userId")
     .where({ id })
     .first();
 }
 
 function findFavsByUserId(id) {
   return db("favorites")
-    .select("id", "strain", "type", "flavor", "description", "userId")
+    .select("id", "strain", "type", "effects", "flavor", "description", "userId")
     .where({ userId: id });
 }
 

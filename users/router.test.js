@@ -37,10 +37,11 @@ describe("users router", function() {
         .get(`/api/users/${testUserId}/recs`)
         .set("Authorization", authToken)
         .then(response => {
-          expect(response.body[testIndex]).toHaveProperty("strain");
-          expect(response.body[testIndex]).toHaveProperty("type");
-          expect(response.body[testIndex]).toHaveProperty("flavor");
-          expect(response.body[testIndex]).toHaveProperty("description");
+          expect(response.body[testIndex]).toHaveProperty("Strain");
+          expect(response.body[testIndex]).toHaveProperty("Type");
+          expect(response.body[testIndex]).toHaveProperty("Flavor");
+          expect(response.body[testIndex]).toHaveProperty("Effects");
+          expect(response.body[testIndex]).toHaveProperty("Description");
         });
     });
   });
@@ -51,10 +52,11 @@ describe("users router", function() {
         .get(`/api/users/${testUserId}/favs`)
         .set("Authorization", authToken)
         .then(response => {
-          expect(response.body[testIndex]).toHaveProperty("strain");
-          expect(response.body[testIndex]).toHaveProperty("type");
-          expect(response.body[testIndex]).toHaveProperty("flavor");
-          expect(response.body[testIndex]).toHaveProperty("description");
+          expect(response.body[testIndex]).toHaveProperty("Strain");
+          expect(response.body[testIndex]).toHaveProperty("Type");
+          expect(response.body[testIndex]).toHaveProperty("Flavor");
+          expect(response.body[testIndex]).toHaveProperty("Effects");
+          expect(response.body[testIndex]).toHaveProperty("Description");
         });
     });
   });
